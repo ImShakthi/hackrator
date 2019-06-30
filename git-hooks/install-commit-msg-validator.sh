@@ -2,8 +2,8 @@
 
 # Install git commit message validator
 # To validate following messages:
-# 'SECSUB-#### [committer_name_1|committer_name_2] commit message'
-# 'SECSUB-Tech [committer_name_1|committer_name_2] commit message'
+# 'PROJECT-#### [committer_name_1|committer_name_2] commit message'
+# 'PROJECT-Tech [committer_name_1|committer_name_2] commit message'
 
 VALIDATOR_FILE=".git/hooks/commit-msg"
 
@@ -20,10 +20,10 @@ echo "Adding rules for validator \xF0\x9F\x94\x8E"
 message_file = ARGV[0]
 message = File.read(message_file)
 
-\$regex = /((SECSUB-(TECH|[0-9]))[\s](\[[\w\.]+[\|[\w\.]+]+\])[\s])/i 
+\$regex = /((PROJECT-(TECH|[0-9]))[\s](\[[\w\.]+[\|[\w\.]+]+\])[\s])/i 
 if !\$regex.match(message) 
   puts "[POLICY] Your message is not formatted correctly" 
-  puts "[STANDARD] Your message should be in the format: ‘SECSUB-#### [committer_name_1|committer_name_2] commit message’" 
+  puts "[STANDARD] Your message should be in the format: ‘PROJECT-#### [committer_name_1|committer_name_2] commit message’" 
   exit 1
 end
 EOM
