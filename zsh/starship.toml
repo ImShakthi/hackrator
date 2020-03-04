@@ -1,0 +1,58 @@
+prompt_order = [
+    "username",
+    "hostname",
+    "kubernetes",
+    "directory",
+    "git_branch",
+    "git_state",
+    "git_status",
+    "aws",
+    "env_var",
+    "cmd_duration",
+    "line_break",
+    "jobs",
+    "time",
+    "character",
+]
+
+[line_break]
+# disabled = true
+
+[time]
+disabled = false
+format = "%I:%M:%S%p"
+use_12hr=true
+style="bold green"
+
+add_newline = false
+
+[character]
+# symbol = "➜"
+use_symbol_for_status = true
+
+[package]
+disabled = true
+
+#[git_state]
+#cherry_pick = "🍒"
+#conflicted = "🏳"
+#ahead = "🏎💨"
+#behind = "😰"
+#diverged = "😵"
+#untracked = "🤷"
+#stashed = "📦"
+#modified = "📝"
+#staged.value = "++"
+#staged.style = "green"
+#staged_count.enabled = true
+#staged_count.style = "green"
+#renamed = "👅"
+# deleted = "🗑"
+
+
+[hostname]
+ssh_only = true
+prefix = "⟪"
+suffix = "⟫"
+trim_at = ".companyname.com"
+disabled = false
